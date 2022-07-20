@@ -12,9 +12,8 @@ const root = new Vue({
         totEmails: 10,
         myGeneratedEmails: [],
     },
-    computed: {
-    },
-    created() {
+    methods: {
+        getRandomEmails(){
             for (let i = 1; i <= this.totEmails; i++) {
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                     .then((res) => {
@@ -25,14 +24,9 @@ const root = new Vue({
                         this.printEmail = this.myGeneratedEmails
                     })
             }
-
-            //         .catch(() => {
-            //     this.error = 'Si e verificato un errore';
-            // })
-            // .then(() => {
-            //     //esegui se la chiamata e' ok (2xx)
-            //     this.isLoading = false;
-            // })
         }
-
+    },
+    created() {
+        this.getRandomEmails()
+        }
 })
