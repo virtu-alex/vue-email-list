@@ -26,7 +26,7 @@ const root = new Vue({
             }
         }
     },
-    created() {
+    mounted() {
         this.getRandomEmails()
         }
 })
