@@ -33,8 +33,8 @@
 
 <body>
     <div id="root" class="container">
-        <ul class="list-unstyled">
-            <li v-for="email in printEmail">{{email}}</li>
+        <ul v-if="myGeneratedEmails.length === totEmails" class="list-unstyled">
+            <li v-for="email in myGeneratedEmails">{{email}}</li>
         </ul>
 
     </div>
